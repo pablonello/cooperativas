@@ -60,7 +60,7 @@
             </div>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Editar Datos</button>
+        <button type="submit" class="btn btn-secondary">Editar Datos</button>
         <br>
     </form>
     <br>

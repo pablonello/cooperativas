@@ -306,7 +306,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'list',
-                    'url' => '#',
+                    'url' => 'users',
                 ],
             ],
         ],

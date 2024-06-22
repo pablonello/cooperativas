@@ -18,7 +18,7 @@
         </div>
     @endif
     <div class="d-flex justify-content-end">
-        <a href="{{ route('cooperativas.create') }}" class="btn btn-primary">Agregar Cooperativa</a>
+        <a href="{{ route('cooperativas.create') }}" class="btn btn-secondary">Agregar Cooperativa</a>
     </div>
     <br>
     <div class="table-responsive">
