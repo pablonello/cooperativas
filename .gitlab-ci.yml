@@ -3,6 +3,11 @@ image: lorisleiva/laravel-docker
 stages:
   - deploy
 
+variables:
+  FTP_HOST: ftp://4topiso.com
+  FTP_USER: u120706926
+  FTP_PASS: German354# # Asegúrate de que esta variable esté definida en las variables de CI/CD en GitLab
+
 before_script:
   - composer install --no-dev --prefer-dist --optimize-autoloader
   - echo "APP_NAME=$APPNAME" > .env
@@ -23,7 +28,8 @@ before_script:
 deploy_production:
   stage: deploy
   script:
-    - apt-get update -qq && apt-get install -y -qq lftp
-    - lftp -c "open -u $FTPUSER,$FTPPASS $FTPHOST; mirror -R ./ /public_html"
+    # Usar lftp directamente en el script
+    - apk add --no-cache lftp  # Instalar lftp si estás usando Alpine Linux
+    - lftp -c "open -u $FTP_USER,$FTP_PASS $FTP_HOST; mirror -R ./ /public_html"
   only:
     - master
